@@ -1,0 +1,96 @@
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go build output
+*.test
+*.out
+
+# Output of go build / go install
+bin/
+build/
+dist/
+release/
+
+# Coverage files
+*.cover
+*.coverprofile
+*.coverage
+coverage.out
+coverage/
+
+# Go workspace
+go.work
+go.work.sum
+
+# Vendor directory (if using go mod vendor)
+vendor/
+
+# IDE / Editor settings
+# VS Code
+.vscode/
+# JetBrains Goland
+.idea/
+*.iml
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+log/
+
+# Temporary or cache files
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# Go module download cache (if placed inside project accidentally)
+pkg/mod/
+pkg/sumdb/
+
+# Docker related
+docker-data/
+*.tar
+
+# Environment files
+.env
+.env.*
+!env.example
+!example.env
+
+# Config files that shouldn’t be committed
+config.yaml
+config.yml
+config.toml
+config.local.*
+*.local.yaml
+*.local.yml
+*.local.json
+
+# If using Air (Go hot reload)
+.air.toml
+
+# If using gin or other dev tools
+gin-bin
+
+# If using wire (Google DI tool)
+wire_gen.go
+
+# Protobuf generated files (if generated)
+*.pb.go
+
+# Swagger / OpenAPI generated
+docs/
+
+# Cache
+.cache/
