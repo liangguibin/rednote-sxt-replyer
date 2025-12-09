@@ -8,12 +8,18 @@ import (
 	"github.com/liangguibin/rednote-sxt-replyer/util"
 	"log"
 	_ "modernc.org/sqlite"
+	"os"
 )
 
 // InitDb 初始化数据库
 func InitDb() {
 	// 打开数据库连接池 如果数据库文件不存在则创建
-	db, err := sql.Open("sqlite", "./database/replyer.db?_journal_mode=WAL&_busy_timeout=-1&_synchronous=NORMAL&_cache_size=1000")
+	dbDir := "./database"
+	if err := os.MkdirAll(dbDir, 0755); err != nil {
+		log.Fatal(util.GetTime(), " 创建数据库目录失败: ", err)
+	}
+	dbPath := dbDir + "/replyer.db?_journal_mode=WAL&_busy_timeout=-1&_synchronous=NORMAL&_cache_size=1000"
+	db, err := sql.Open("sqlite", dbPath)
 	if err != nil {
 		log.Fatal(util.GetTime(), " 初始化数据库失败: ", err)
 	}
